@@ -33,6 +33,7 @@
 		37CCC2E91DC39A92007A264B /* libspiro.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspiro.a; sourceTree = "<group>"; };
 		37CCC2EA1DC39A92007A264B /* spiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spiro.h; sourceTree = "<group>"; };
 		37CCC2EC1DC3A6D0007A264B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		49B5B9F8B3CC0C01B471286C /* Pods-Spirios.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spirios.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-Spirios/Pods-Spirios.distribution.xcconfig"; sourceTree = "<group>"; };
 		61E459C5CC308E5974496B15 /* libPods-Spirios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spirios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF0780E4BC098ABBA2DFB63 /* Pods-Spirios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spirios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spirios/Pods-Spirios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +109,7 @@
 			children = (
 				6BF0780E4BC098ABBA2DFB63 /* Pods-Spirios.debug.xcconfig */,
 				24119FD313A8D1BAC06B0B2B /* Pods-Spirios.release.xcconfig */,
+				49B5B9F8B3CC0C01B471286C /* Pods-Spirios.distribution.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -156,7 +158,7 @@
 					371E61B01DC2D1410018DA40 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = CZ53Q653EJ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -382,6 +384,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = CZ53Q653EJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Spirios/Info.plist;
@@ -390,8 +393,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/spiro",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nuance.labs.tokio.Spirios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "04583e2b-bccd-4b6f-a34c-fd4c0c46f499";
+				PROVISIONING_PROFILE_SPECIFIER = NuanceEnterpriseDistribution;
 			};
 			name = Debug;
 		};
@@ -401,6 +406,7 @@
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = CZ53Q653EJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Spirios/Info.plist;
@@ -409,8 +415,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/spiro",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nuance.labs.tokio.Spirios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "04583e2b-bccd-4b6f-a34c-fd4c0c46f499";
+				PROVISIONING_PROFILE_SPECIFIER = NuanceEnterpriseDistribution;
 			};
 			name = Release;
 		};
@@ -458,7 +466,7 @@
 		};
 		37CCC2E71DC2D486007A264B /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24119FD313A8D1BAC06B0B2B /* Pods-Spirios.release.xcconfig */;
+			baseConfigurationReference = 49B5B9F8B3CC0C01B471286C /* Pods-Spirios.distribution.xcconfig */;
 			buildSettings = {
 				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -471,8 +479,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/spiro",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nuance.labs.tokio.Spirios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "631edc52-130c-4da3-a6e8-d6de82e2a5ca";
+				PROVISIONING_PROFILE_SPECIFIER = NuanceEnterpriseDistribution;
 			};
 			name = Distribution;
 		};
