@@ -14,6 +14,7 @@
 		371E61C11DC2D1410018DA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371E61C01DC2D1410018DA40 /* Assets.xcassets */; };
 		371E61C41DC2D1410018DA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371E61C21DC2D1410018DA40 /* LaunchScreen.storyboard */; };
 		37CCC2EB1DC39A92007A264B /* libspiro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CCC2E91DC39A92007A264B /* libspiro.a */; };
+		37CCC2ED1DC3A6D0007A264B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 37CCC2EC1DC3A6D0007A264B /* Settings.bundle */; };
 		51A08AA33903700DCAEDB6D5 /* libPods-Spirios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E459C5CC308E5974496B15 /* libPods-Spirios.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		371E61C51DC2D1410018DA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37CCC2E91DC39A92007A264B /* libspiro.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspiro.a; sourceTree = "<group>"; };
 		37CCC2EA1DC39A92007A264B /* spiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spiro.h; sourceTree = "<group>"; };
+		37CCC2EC1DC3A6D0007A264B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		61E459C5CC308E5974496B15 /* libPods-Spirios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spirios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF0780E4BC098ABBA2DFB63 /* Pods-Spirios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spirios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spirios/Pods-Spirios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				371E61C01DC2D1410018DA40 /* Assets.xcassets */,
 				371E61C21DC2D1410018DA40 /* LaunchScreen.storyboard */,
 				371E61C51DC2D1410018DA40 /* Info.plist */,
+				37CCC2EC1DC3A6D0007A264B /* Settings.bundle */,
 				371E61B41DC2D1410018DA40 /* Supporting Files */,
 			);
 			path = Spirios;
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37CCC2ED1DC3A6D0007A264B /* Settings.bundle in Resources */,
 				371E61C41DC2D1410018DA40 /* LaunchScreen.storyboard in Resources */,
 				371E61C11DC2D1410018DA40 /* Assets.xcassets in Resources */,
 				371E61BF1DC2D1410018DA40 /* Main.storyboard in Resources */,

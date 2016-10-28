@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.client = spiro_client_new("169.254.133.92");
-    // Do any additional setup after loading the view, typically from a nib.
+    NSString *host = [[NSUserDefaults standardUserDefaults] stringForKey:@"host"];
+    self.client = spiro_client_new([host cStringUsingEncoding:NSUTF8StringEncoding]);
 }
 
 
