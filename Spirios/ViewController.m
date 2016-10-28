@@ -25,5 +25,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+    
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (touches.count > 0) {
+        UITouch *touch = [touches anyObject];
+        CGPoint location = [touch locationInView:nil];
+        CGRect bounds = touch.window.bounds;
+        float x = location.x / bounds.size.width;
+        float y = location.y / bounds.size.height;
+        NSLog(@"move: %f, %f", x, y);
+    }
+}
 
 @end
