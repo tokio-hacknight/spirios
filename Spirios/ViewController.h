@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "spiro.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) spiro_client_t *client;
 
 @end
 

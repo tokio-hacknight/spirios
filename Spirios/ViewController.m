@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.client = spiro_client_new("169.254.133.92");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -34,6 +35,7 @@
         float x = location.x / bounds.size.width;
         float y = location.y / bounds.size.height;
         NSLog(@"move: %f, %f", x, y);
+        spiro_client_send(self.client, x, y);
     }
 }
 

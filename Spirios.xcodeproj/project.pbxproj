@@ -13,6 +13,7 @@
 		371E61BF1DC2D1410018DA40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371E61BD1DC2D1410018DA40 /* Main.storyboard */; };
 		371E61C11DC2D1410018DA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371E61C01DC2D1410018DA40 /* Assets.xcassets */; };
 		371E61C41DC2D1410018DA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371E61C21DC2D1410018DA40 /* LaunchScreen.storyboard */; };
+		37CCC2EB1DC39A92007A264B /* libspiro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37CCC2E91DC39A92007A264B /* libspiro.a */; };
 		51A08AA33903700DCAEDB6D5 /* libPods-Spirios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E459C5CC308E5974496B15 /* libPods-Spirios.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 		371E61C01DC2D1410018DA40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		371E61C31DC2D1410018DA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		371E61C51DC2D1410018DA40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37CCC2E91DC39A92007A264B /* libspiro.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libspiro.a; sourceTree = "<group>"; };
+		37CCC2EA1DC39A92007A264B /* spiro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spiro.h; sourceTree = "<group>"; };
 		61E459C5CC308E5974496B15 /* libPods-Spirios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spirios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF0780E4BC098ABBA2DFB63 /* Pods-Spirios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spirios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spirios/Pods-Spirios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +41,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A08AA33903700DCAEDB6D5 /* libPods-Spirios.a in Frameworks */,
+				37CCC2EB1DC39A92007A264B /* libspiro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +51,7 @@
 		371E61A81DC2D1410018DA40 = {
 			isa = PBXGroup;
 			children = (
+				37CCC2E81DC39A92007A264B /* spiro */,
 				371E61B31DC2D1410018DA40 /* Spirios */,
 				371E61B21DC2D1410018DA40 /* Products */,
 				82AFB433EE61E700A40A0550 /* Pods */,
@@ -84,6 +89,15 @@
 				371E61B51DC2D1410018DA40 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37CCC2E81DC39A92007A264B /* spiro */ = {
+			isa = PBXGroup;
+			children = (
+				37CCC2E91DC39A92007A264B /* libspiro.a */,
+				37CCC2EA1DC39A92007A264B /* spiro.h */,
+			);
+			path = spiro;
 			sourceTree = "<group>";
 		};
 		82AFB433EE61E700A40A0550 /* Pods */ = {
@@ -362,10 +376,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6BF0780E4BC098ABBA2DFB63 /* Pods-Spirios.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZ53Q653EJ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Spirios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spiro",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -375,10 +395,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24119FD313A8D1BAC06B0B2B /* Pods-Spirios.release.xcconfig */;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZ53Q653EJ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Spirios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spiro",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -430,11 +456,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24119FD313A8D1BAC06B0B2B /* Pods-Spirios.release.xcconfig */;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = CZ53Q653EJ;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Spirios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spiro",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.rust-lang.tokio.Spirios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
